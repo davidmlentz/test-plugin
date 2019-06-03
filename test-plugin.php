@@ -1,8 +1,7 @@
 <?php
-/**
- * @package test_plugin
- * @version 1.0
- */
+   /*
+   Plugin Name: Test Plugin
+   */
  
  defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
  
