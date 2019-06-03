@@ -10,6 +10,7 @@
      return $content . '<br />' . $my_string;
  }
 
+/*
 dd_trace($this, "test_plugin_execute", function ( $content ) {
     // Start a new span
     $scope = GlobalTracer::get()->startActiveSpan('TestPlugin.test_plugin_execute');
@@ -34,5 +35,5 @@ dd_trace($this, "test_plugin_execute", function ( $content ) {
         $span->finish();
     }
 });
- 
- add_action( 'the_content', 'test_plugin_execute' );
+*/
+add_action( 'the_content', 'test_plugin_execute' );
