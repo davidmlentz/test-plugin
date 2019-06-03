@@ -11,8 +11,8 @@ class myClass {
      return $content . '<br />' . $my_string;
  }
 }
-/*
-dd_trace($this, "test_plugin_execute", function ( $content ) {
+
+dd_trace("myClass", "test_plugin_execute", function ( $content ) {
     // Start a new span
     $scope = GlobalTracer::get()->startActiveSpan('TestPlugin.test_plugin_execute');
     $span = $scope->getSpan();
@@ -22,7 +22,7 @@ dd_trace($this, "test_plugin_execute", function ( $content ) {
 
     try {
         // Execute the original method
-        $result = $this->doWork( $content );
+        $result = $myClass->test_plugin_execute( $content );
         // Set a tag based on the return value
         $span->setTag('test_plugin_execute.size', -1);
         return $result;
@@ -36,5 +36,5 @@ dd_trace($this, "test_plugin_execute", function ( $content ) {
         $span->finish();
     }
 });
-*/
+
 add_action( 'the_content', 'myClass::test_plugin_execute' );
