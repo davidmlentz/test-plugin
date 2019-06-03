@@ -6,7 +6,7 @@
  defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
  
  function test_plugin_execute( $content ) {
-     $my_string = "TESTING??";
+     $my_string = "TESTINGzzz";
      return $content . '<br />' . $my_string;
  }
  
