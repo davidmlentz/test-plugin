@@ -7,7 +7,7 @@
  
 class myClass {
  function test_plugin_execute( $content ) {
-     $my_string = "TESTINGzzz1234";
+     $my_string = "TESTINGzzz12345";
      return $content . '<br />' . $my_string;
  }
 }
