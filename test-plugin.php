@@ -37,4 +37,6 @@ dd_trace("myClass", "test_plugin_execute", function ( $content ) {
     }
 });
 
-add_action( 'the_content', new $myClass->test_plugin_execute );
+$myMethod = new $myClass->test_plugin_execute;
+
+add_action( 'the_content', $myMethod );
