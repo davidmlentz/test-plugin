@@ -4,7 +4,7 @@
    */
  
  defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
- require 'vendor/autoload.php'
+ require 'vendor/autoload.php';
  
 
  function test_plugin_execute( $content ) {
