@@ -5,16 +5,15 @@
  
  defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
  
-class myClass {
+
  function test_plugin_execute( $content ) {
      $my_string = "TESTINGzzz12345";
      return $content . '<br />' . $my_string;
  }
-}
 
-dd_trace("myClass", "test_plugin_execute", function ( $content ) {
+dd_trace("test_plugin_execute", function ( $content ) {
     // Start a new span
-    $scope = GlobalTracer::get()->startActiveSpan('myClass.test_plugin_execute');
+    $scope = GlobalTracer::get()->startActiveSpan('test_plugin_execute');
     $span = $scope->getSpan();
 
     // Access object members via $this
@@ -22,7 +21,7 @@ dd_trace("myClass", "test_plugin_execute", function ( $content ) {
 
     try {
         // Execute the original method
-        $result = $myClass->test_plugin_execute( $content );
+        $result = test_plugin_execute( $content );
         // Set a tag based on the return value
         $span->setTag('test_plugin_execute.size', 1);
         return $result;
@@ -37,6 +36,4 @@ dd_trace("myClass", "test_plugin_execute", function ( $content ) {
     }
 });
 
-$myMethod = new $myClass->test_plugin_execute;
-
-add_action( 'the_content', $myMethod );
+add_action( 'the_content', 'test_plugin_execute' );
