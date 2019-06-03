@@ -30,7 +30,7 @@ dd_trace("myClass", "test_plugin_execute", function ( $content ) {
         // Inform the tracer that there was an exception thrown
         $span->setError($e);
         // Bubble up the exception
-        throw $e
+        throw $e;
     } finally {
         // Close the span
         $span->finish();
