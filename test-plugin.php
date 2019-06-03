@@ -5,11 +5,12 @@
  
  defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
  
+class myClass {
  function test_plugin_execute( $content ) {
      $my_string = "TESTINGzzz1234";
      return $content . '<br />' . $my_string;
  }
-
+}
 /*
 dd_trace($this, "test_plugin_execute", function ( $content ) {
     // Start a new span
@@ -36,4 +37,4 @@ dd_trace($this, "test_plugin_execute", function ( $content ) {
     }
 });
 */
-add_action( 'the_content', 'test_plugin_execute' );
+add_action( 'the_content', 'myClass::test_plugin_execute' );
