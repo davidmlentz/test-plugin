@@ -14,7 +14,7 @@ class myClass {
 
 dd_trace("myClass", "test_plugin_execute", function ( $content ) {
     // Start a new span
-    $scope = GlobalTracer::get()->startActiveSpan('TestPlugin.test_plugin_execute');
+    $scope = GlobalTracer::get()->startActiveSpan('myClass.test_plugin_execute');
     $span = $scope->getSpan();
 
     // Access object members via $this
@@ -24,7 +24,7 @@ dd_trace("myClass", "test_plugin_execute", function ( $content ) {
         // Execute the original method
         $result = $myClass->test_plugin_execute( $content );
         // Set a tag based on the return value
-        $span->setTag('test_plugin_execute.size', -1);
+        $span->setTag('test_plugin_execute.size', 1);
         return $result;
     } catch (Exception $e) {
         // Inform the tracer that there was an exception thrown
